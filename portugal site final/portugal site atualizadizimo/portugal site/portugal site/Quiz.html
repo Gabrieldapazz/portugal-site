@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="style/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="style1/style3.css" media="screen" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- FIM GOOGLE FONTES-->
+    <link rel="stylesheet" href="index.css">
+    <title>Portugal</title>
+    
+</head>
+
+</style>
+</head>
+<body>
+  <header>
+      
+    <div class="interface">
+       <div class="logo">
+         <a href="#">
+            <img src="img/logo.jpg" alt="logo do projeto" width="150" height="150">
+         </a>
+      </div><!--logo-->
+
+      <nav class="menu-desktop">
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    
+    <li><a href="quiz.html">Quiz</a></li> <!-- Novo item adicionado -->
+  </ul>
+</nav>
+
+      <div class="btn-contato">
+      <a href="contato.html">
+        <button>Contato</button>
+      </a>
+      </div><!--btn-contato-->
+    </div><!--interace-->
+
+
+
+</header>
+<h2>Quiz: O quanto você conhece Portugal?</h2>
+
+<div class="question">
+  <p>1. Qual é a capital de Portugal?</p>
+  <input type="radio" name="q1" value="certo"> Lisboa<br>
+  <input type="radio" name="q1" value="errado"> Porto<br>
+  <input type="radio" name="q1" value="errado"> Braga
+</div>
+
+<div class="question">
+  <p>2. Qual é o prato feito com bacalhau, batata palha e ovos?</p>
+  <input type="radio" name="q2" value="errado"> Arroz de Marisco<br>
+  <input type="radio" name="q2" value="certo"> Bacalhau à Brás<br>
+  <input type="radio" name="q2" value="errado"> Feijoada à Transmontana
+</div>
+
+<div class="question">
+  <p>3. O que é o fado em Portugal?</p>
+  <input type="radio" name="q3" value="certo"> Um estilo musical tradicional, geralmente melancólico<br>
+  <input type="radio" name="q3" value="errado"> Um prato típico feito com peixe<br>
+  <input type="radio" name="q3" value="errado"> Um tipo de dança folclórica portuguesa
+</div>
+
+
+<div class="question">
+  <p>4. Qual oceano banha Portugal?</p>
+  
+  <input type="radio" name="q4" value="errado"> Índico<br>
+  <input type="radio" name="q4" value="errado"> Pacífico<br>
+  <input type="radio" name="q4" value="certo"> Atlântico
+</div>
+
+<div class="question">
+  <p>5. Em que data é celebrada a festa de São João no Porto?</p>
+  <input type="radio" name="q5" value="errado"> 1 de novembro<br>
+  <input type="radio" name="q5" value="certo"> 24 de junho<br>
+  <input type="radio" name="q5" value="errado"> 25 de dezembro
+</div>
+
+
+<div class="question">
+  <p>6. Como se chama a famosa música tradicional portuguesa, geralmente cantada de forma melancólica?</p>
+  <input type="radio" name="q6" value="errado"> Samba<br>
+  <input type="radio" name="q6" value="errado"> Flamenco<br>
+  <input type="radio" name="q6" value="certo"> Fado
+</div>
+
+<div class="question">
+  <p>7. Qual é o tipo de vinho mais tradicionalmente associado a Portugal?</p>
+  <input type="radio" name="q7" value="certo"> Tinto<br>
+  <input type="radio" name="q7" value="errado"> Branco<br>
+  <input type="radio" name="q7" value="errado"> Rosé
+</div>
+
+
+<button onclick="verificarRespostas()">Ver Resultado</button>
+
+<div id="resultado"></div>
+
+<script>
+  function verificarRespostas() {
+    const total = 7;
+    let acertos = 0;
+    let resultadoHTML = "<h3>Resultado:</h3><ul>";
+
+    for (let i = 1; i <= total; i++) {
+      const resposta = document.querySelector(`input[name="q${i}"]:checked`);
+      if (!resposta) {
+        resultadoHTML += `<li class="errada">Pergunta ${i}: Não respondida</li>`;
+      } else if (resposta.value === "certo") {
+        acertos++;
+        resultadoHTML += `<li class="certa">Pergunta ${i}: Correta ✅</li>`;
+      } else {
+        resultadoHTML += `<li class="errada">Pergunta ${i}: Errada ❌</li>`;
+      }
+    }
+
+    resultadoHTML += `</ul><p><strong>Total de acertos: ${acertos} de ${total}</strong></p>`;
+    document.getElementById("resultado").innerHTML = resultadoHTML;
+  }
+</script>
+
+<div style="text-align: center;">
+  <img src="img/WhatsApp Image 2025-05-06 at 10.20.02.jpeg" alt="" width="250" height="260">
+</div>
+
+</body>
+</html>
